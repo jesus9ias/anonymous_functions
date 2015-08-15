@@ -2,22 +2,17 @@
 
 function run_function($function){
 	
+	//get argument from the current function and delte the first, because is the same function
 	$params = func_get_args();
-	unset( $params[0] );
+	unset($params[0]);
 
-	if(($count = count($params)) > 0){
-		$args = '$a';
-		$inc = 'b';
+	//if there is more params then use it
+	if((count($params)) > 0){
 
-		
-		for($x = 1; $x < $count; $x++){
-			$args .= ', $' . $inc;
-			$inc++;
-		}
-
+		//concatenate the varr to create new params
 		$params = "'" . implode('\', \'', $params) . "'";
 
-		
+		//cerate a function to evaluate
 		$eval = '$return = $function(' . $params . ');';
 		eval($eval);
 
