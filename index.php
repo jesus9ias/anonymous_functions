@@ -27,6 +27,7 @@ function run_function($function){
 	}
 }
 
+//send an anonymus function whith parameters
 echo run_function(function($a,$b){return $a+$b;},5,7);
 
 ?>
