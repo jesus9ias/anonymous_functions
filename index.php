@@ -1,5 +1,6 @@
 <?php
 
+//run function
 function run_function($function){
 	
 	//get argument from the current function and delte the first, because is the same function
